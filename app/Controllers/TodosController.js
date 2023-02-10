@@ -47,9 +47,9 @@ constructor(){
             
         }
     
-        async completeTodo(todoId){
+        async completeTodo(id){
             try {
-                await todosService.completeTodo(todoId)
+                await todosService.completeTodo(id)
             } catch (error) {
                 console.error(error)
                 Pop.error(error.message)

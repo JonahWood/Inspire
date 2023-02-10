@@ -6,11 +6,15 @@ import { appState } from "../AppState.js";
 
 class TodosService {
     
-        async completeTodo(todoId){
+        async completeTodo(id){
         console.log('todo completed or toggled or whatever')
-        const todoIndex = appState.todos.findIndex(t => t.id == todoId)
+        const todoIndex = appState.todos.findIndex(t => t.id == id)
         const foundTodo = appState.todos[todoIndex]
         console.log('found todo:',foundTodo);
+        const res = await theApi.put(`/jonah/todos/${id}`, { completed: !foundTodo.completed })
+        console.log('ressss', res.data);
+            appState.todos.splice(todoIndex, 1, new Todo(res.data))
+            appState.emit('todos')
         }
 
 
