@@ -1,15 +1,22 @@
 /* BASIC STYLES HERE */
 body{
-    background-image: url(https://pixabay.com/get/g6b1a9197b237c7db4251d2cc749b5c1ef50a6f8f36766d9ca8d7921e3878b398bfd34d10475765d574d52a833f568a4fbd04b06979aad6eadc6eb3b4dd3470ea_1280.jpg);
+    background-image: url(https://codeworks.blob.core.windows.net/public/assets/img/projects/inspire.jpg);
     /* background-image: url(https://bcw-sandbox.herokuapp.com/api/images[url]); */
     background-size: cover;
 }
 
 .todo-card{
-    background-color: rgba(255, 255, 255, 0.123);
+    background-color: rgba(255, 255, 255, 0.276);
     border: 2px solid black;
     border-radius: 1%;
     /* margin: 2em;
     padding: 1em; */
-    color: aliceblue;
+    color: rgb(0, 0, 0);
+    text-shadow: #ffffff 1px 0 10px;
+}
+
+.myclock{
+    font-size: 8em;
+    color: #ffffff;
+    text-shadow: #0000008d 2px 2px 2px;
 }
