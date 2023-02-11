@@ -7,10 +7,10 @@ import { appState } from "../AppState.js";
 class TodosService {
     
         async completeTodo(id){
-        console.log('todo completed or toggled or whatever')
+        // console.log('todo completed or toggled or whatever')
         const todoIndex = appState.todos.findIndex(t => t.id == id)
         const foundTodo = appState.todos[todoIndex]
-        console.log('found todo:',foundTodo);
+        // console.log('found todo:',foundTodo);
         const res = await theApi.put(`/jonah/todos/${id}`, { completed: !foundTodo.completed })
         console.log('ressss', res.data);
             appState.todos.splice(todoIndex, 1, new Todo(res.data))
@@ -31,10 +31,16 @@ console.log('t:',appState.todos);
         console.log('log form data',formData);
 const res = await theApi.post('/jonah/todos', formData)
 console.log(']create todo[', res.data);
-appState.todos = [appState.todos, new Todo(res.data)]
+let newestTodo = new Todo(res.data)
+appState.todos.push(newestTodo)
+// appState.todos = [appState.todos, new Todo(res.data)]
+appState.emit('todos')
     }        
-    async removeTodo(){
-
+    async removeTodo(todoId){
+        const res = await theApi.delete(`/jonah/todos/${todoId}`)
+        let todoIndex = appState.todos.findIndex(todo => todo.id == todoId)
+        appState.todos.splice(todoIndex, 1)
+        appState.emit('todos')
     }
 }
 

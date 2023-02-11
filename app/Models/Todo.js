@@ -10,8 +10,11 @@ export class Todo{
     get todosListTemp() { 
 
         return`
-        <input name="todos" id="todos" type="checkbox" onchange="app.todosController.completeTodo('${this.id}')" class="form-check-input fs-2" type="checkbox" value="" id="flexCheckDefault">
+        <div>
+        <input ${this.completed ? 'checked' : 'unchecked'} name="todos" id="todos" type="checkbox" onchange="app.todosController.completeTodo('${this.id}')" class="form-check-input fs-2"   >
         <h6>${this.desc}</h6>
+        <button name="deleteTodo" id="deleteTodo" onclick="app.todosController.removeTodo('${this.id}')">DELETE</button>
+        </div>
         `
     }
 }

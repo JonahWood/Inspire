@@ -17,7 +17,7 @@ function _drawTodos() {
 
 export class TodosController{
 constructor(){
-    console.log('hello from todo controller');
+    // console.log('hello from todo controller');
     _drawTodos()
     this.getTodos()
     appState.on('todos', _drawTodos)
@@ -36,9 +36,9 @@ constructor(){
             try {
                 window.event.preventDefault()
             const form = window.event.target
-            console.log('form logs', form);
+            // console.log('form logs', form);
             const formData = getFormData(form)
-            console.log('hey', formData);
+            // console.log('hey', formData);
                 await todosService.createTodo(formData)
             } catch (error) {
                 console.error(error)
@@ -57,9 +57,11 @@ constructor(){
             
         }
     
-        async removeTodo(){
+        async removeTodo(todoId){
             try {
-                await todosService.removeTodo()
+                if (await Pop.confirm("Are you sure you'd like to delete this todo?")) {
+                    await todosService.removeTodo(todoId)
+                }
             } catch (error) {
                 console.error(error)
                 Pop.error(error.message)
