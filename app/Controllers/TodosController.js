@@ -7,10 +7,19 @@ import { setHTML } from "../Utils/Writer.js";
 
 function _drawTodos() {
     let template = ''
-  
     appState.todos.forEach(t => template += t.todosListTemp)
     setHTML('todoListTemp', template)
 }
+
+function _drawUnTodo(){
+    let template = ''
+    appState.todos.forEach(t => template += t.unfinishedTodoTemp)
+    setHTML('unfinishedTodoTemp', template)
+}
+
+// function _bgImg(){
+//     document.body.className = 'https://codeworks.blob.core.windows.net/public/assets/img/projects/inspire.jpg'
+// }
 
 
 
@@ -19,6 +28,8 @@ export class TodosController{
 constructor(){
     // console.log('hello from todo controller');
     _drawTodos()
+    _drawUnTodo()
+    // _bgImg()
     this.getTodos()
     appState.on('todos', _drawTodos)
 }

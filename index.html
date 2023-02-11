@@ -28,13 +28,19 @@
   <main>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12 text-center" >
-          <div id="todoListTemp" class="m-5">
+        <div class="col-3">
+          <div class="todo-card bg-gradient text-center m-5" id="weather">
+            <!-- <h2 onclick="app.weatherController.tempSwitch()">32° f</h2> -->
+          </div>
+        </div>
+        <div class="offset-6 col-3 text-end todo-card bg-gradient p-1">
+          <div id="unfinishedTodoTemp"></div>
+          <div id="todoListTemp" class="mb-5">
             <!-- <input type="checkbox" onchange="app.todosController.completeTodo(id)" class="form-check-input fs-2" type="checkbox" value="" id="flexCheckDefault">
             take out the trash -->
           </div>
           <div>
-            <label for="newTodo" class="form-label  text-danger"> <h6>New Todo</h6> </label>
+            <label for="newTodo" class="form-label"> <h6>New Todo</h6> </label>
           </div>
           <div>
             <form action="" onsubmit="app.todosController.createTodo()">

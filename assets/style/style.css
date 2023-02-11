@@ -1,1 +1,15 @@
 /* BASIC STYLES HERE */
+body{
+    background-image: url(https://pixabay.com/get/g6b1a9197b237c7db4251d2cc749b5c1ef50a6f8f36766d9ca8d7921e3878b398bfd34d10475765d574d52a833f568a4fbd04b06979aad6eadc6eb3b4dd3470ea_1280.jpg);
+    /* background-image: url(https://bcw-sandbox.herokuapp.com/api/images[url]); */
+    background-size: cover;
+}
+
+.todo-card{
+    background-color: rgba(255, 255, 255, 0.123);
+    border: 2px solid black;
+    border-radius: 1%;
+    /* margin: 2em;
+    padding: 1em; */
+    color: aliceblue;
+}
