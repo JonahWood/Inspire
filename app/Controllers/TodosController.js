@@ -12,10 +12,20 @@ function _drawTodos() {
 }
 
 function _drawUnTodo(){
+    // let template = ''
+    // appState.todos.forEach(t => template += t.unfinishedTodoTemp)
+    // setHTML('unfinishedTodoTemp', template)
+}
+
+function _drawUncomplete(){
+    appState.unfinishedTodos = appState.todos.filter(t => t.completed == false)
+    console.log('unfinished todos:',appState.unfinishedTodos)
+
     let template = ''
-    appState.todos.forEach(t => template += t.unfinishedTodoTemp)
+    appState.unfinishedTodos.map(t => template += t.unfinishedTodoTemp)
     setHTML('unfinishedTodoTemp', template)
 }
+
 
 // function _bgImg(){
 //     document.body.className = 'https://codeworks.blob.core.windows.net/public/assets/img/projects/inspire.jpg'
@@ -28,7 +38,7 @@ export class TodosController{
 constructor(){
     console.log('todo controller checking in');
     _drawTodos()
-    _drawUnTodo()
+    // _drawUnTodo()
     // _bgImg()
     this.getTodos()
     appState.on('todos', _drawTodos)
@@ -37,6 +47,7 @@ constructor(){
         async getTodos(){
             try {
                 await todosService.getTodos()
+                _drawUncomplete()
             } catch (error) {
                 console.error(error)
                 Pop.error(error.message)
