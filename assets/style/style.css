@@ -26,5 +26,9 @@ body{
 h6{
     user-select: none;
     text-shadow: #0000008d 10px 10px 10px;
+}
 
+.weatherClass{
+    cursor: pointer;
+    user-select: none;
 }

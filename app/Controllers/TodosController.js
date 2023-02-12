@@ -22,8 +22,15 @@ function _drawUncomplete(){
     console.log('unfinished todos:',appState.unfinishedTodos)
 
     let template = ''
-    appState.unfinishedTodos.map(t => template += t.unfinishedTodoTemp)
-    setHTML('unfinishedTodoTemp', template)
+    if (appState.unfinishedTodos.length == 1) {
+        appState.unfinishedTodos.forEach(t => template += t.unfinishedTodoTemp)
+        setHTML('unfinishedTodoTemp', template)
+    } else if (appState.unfinishedTodos.length >= 2) {
+
+        setHTML('unfinishedTodoTemp', template + 'Unfinished Todos:' + appState.unfinishedTodos.length)
+    } else if (appState.unfinishedTodos.length == 0) {
+        setHTML('unfinishedTodoTemp', template + 'Unfinished Todos: 0')
+    }
 }
 
 
@@ -42,6 +49,7 @@ constructor(){
     // _bgImg()
     this.getTodos()
     appState.on('todos', _drawTodos)
+    appState.on('todos', _drawUncomplete)
 }
 
         async getTodos(){
@@ -58,6 +66,7 @@ constructor(){
             try {
                 window.event.preventDefault()
             const form = window.event.target
+            // form.reset()
             // console.log('form logs', form);
             const formData = getFormData(form)
             // console.log('hey', formData);
@@ -81,7 +90,7 @@ constructor(){
     
         async removeTodo(todoId){
             try {
-                if (await Pop.confirm("Are you sure you'd like to delete this todo?")) {
+                if (await Pop.confirm("Are you sure you'd like to give up on this Todo (be lazy)?")) {
                     await todosService.removeTodo(todoId)
                 }
             } catch (error) {

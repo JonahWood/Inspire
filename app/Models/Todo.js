@@ -17,13 +17,14 @@ export class Todo{
 
 
         // const value = Object.value(Todo)
-        // FIXME whyyy wont this workkkkkkkkkkkkk
+        // FIXME work damnit
+        // SECTION nvm lol
         // console.log(value);
         // console.log(count);
         // <div>${count}</div>
         return`
         <div>
-        <input ${this.completed ? 'checked' : 'unchecked'} name="todos" id="todos" type="checkbox" onchange="app.todosController.completeTodo('${this.id}')" class="form-check-input fs-2"   >
+        <input ${this.completed ? 'checked' : 'unchecked'} name="todos" id="todos" type="checkbox" onchange="app.todosController.completeTodo('${this.id}')" class="form-check-input fs-2 weatherClass"   >
         <h6>${this.desc}</h6>
         <button class="btn btn-danger mdi mdi-trash-can" name="deleteTodo" id="deleteTodo" onclick="app.todosController.removeTodo('${this.id}')"></button>
         </div>
@@ -34,7 +35,9 @@ export class Todo{
     get unfinishedTodoTemp() {
         return`
         <div>
-        ${appState.unfinishedTodos.length}
+        <h3>
+        Unfinished Todos: ${appState.unfinishedTodos.length}
+        </h3>
         </div>
         `
     }

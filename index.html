@@ -29,7 +29,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-3">
-          <div class="todo-card bg-gradient text-center m-5" id="weather">
+          <div class="todo-card bg-gradient text-center m-5 weatherClass" id="weather">
             <!-- <h2 onclick="app.weatherController.tempSwitch()">32° f</h2> -->
           </div>
         </div>
@@ -39,7 +39,11 @@
         </div> -->
 
         <div class="offset-6 col-3 text-end todo-card bg-gradient p-1 text-dark">
-          <div id="unfinishedTodoTemp"></div>
+          <div>
+            <h3>
+              <div id="unfinishedTodoTemp"></div>
+            </h3>
+          </div>
           <div id="todoListTemp" class="mb-5">
             <!-- <input type="checkbox" onchange="app.todosController.completeTodo(id)" class="form-check-input fs-2" type="checkbox" value="" id="flexCheckDefault">
             take out the trash -->
