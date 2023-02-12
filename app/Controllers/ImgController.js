@@ -22,7 +22,7 @@ export class ImgController{
     constructor(){
         appState.on('image', _img)
         _pullImg()
-        console.log('img controller');
+        console.log('img controller checking in');
     }
 
     // async pullImg(){

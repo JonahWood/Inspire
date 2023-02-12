@@ -19,8 +19,12 @@ body{
     font-size: 8em;
     color: #ffffff;
     text-shadow: #0000008d 2px 2px 2px;
+    user-select: none;
+
 }
 
-h3:hover{
-    
+h6{
+    user-select: none;
+    text-shadow: #0000008d 10px 10px 10px;
+
 }

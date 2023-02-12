@@ -26,7 +26,7 @@ function _drawUnTodo(){
 
 export class TodosController{
 constructor(){
-    // console.log('hello from todo controller');
+    console.log('todo controller checking in');
     _drawTodos()
     _drawUnTodo()
     // _bgImg()

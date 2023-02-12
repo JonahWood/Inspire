@@ -22,6 +22,10 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Img').Img[]} */
 
   image = null
+
+  /** @type {import('./Models/Quote').Quote[]} */
+
+  quote = null
 }
 
 export const appState = new Proxy(new AppState(), {

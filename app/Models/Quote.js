@@ -5,7 +5,7 @@ export class Quote{
     }
     get quoteTemp() {
         return`
-        
+        <h6 title="-${this.author}">${this.quote}</h6>
         `
     }
 }

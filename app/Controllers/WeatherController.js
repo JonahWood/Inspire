@@ -12,7 +12,7 @@ function _drawWeather(){
 
 export class WeatherController{
     constructor(){
-        console.log('weather controller is on')
+        console.log('weather controller checking in')
         _drawWeather()
         appState.on('Fahrenheit', _drawWeather)
         appState.on('weather', _drawWeather)
