@@ -3,6 +3,7 @@ body{
     background-image: url(https://codeworks.blob.core.windows.net/public/assets/img/projects/inspire.jpg);
     /* background-image: url(https://bcw-sandbox.herokuapp.com/api/images[url]); */
     background-size: cover;
+    background-position: center;
 }
 
 .todo-card{
@@ -12,7 +13,7 @@ body{
     /* margin: 2em;
     padding: 1em; */
     color: rgb(0, 0, 0);
-    text-shadow: #ffffff 1px 0 10px;
+    text-shadow: #ffffff 1px 0 5px;
 }
 
 .myclock{
