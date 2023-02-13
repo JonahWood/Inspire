@@ -26,7 +26,6 @@ function _drawUncomplete(){
         appState.unfinishedTodos.forEach(t => template += t.unfinishedTodoTemp)
         setHTML('unfinishedTodoTemp', template)
     } else if (appState.unfinishedTodos.length >= 2) {
-
         setHTML('unfinishedTodoTemp', template + 'Unfinished Todos:' + appState.unfinishedTodos.length)
     } else if (appState.unfinishedTodos.length == 0) {
         setHTML('unfinishedTodoTemp', template + 'Unfinished Todos: 0')

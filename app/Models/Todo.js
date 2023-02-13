@@ -23,7 +23,7 @@ export class Todo{
         // console.log(count);
         // <div>${count}</div>
         return`
-        <div>
+        <div class="d-flex justify-content-between text-align-end">
         <input ${this.completed ? 'checked' : 'unchecked'} name="todos" id="todos" type="checkbox" onchange="app.todosController.completeTodo('${this.id}')" class="form-check-input fs-2 weatherClass"   >
         <h6>${this.desc}</h6>
         <button class="btn btn-danger mdi mdi-trash-can" name="deleteTodo" id="deleteTodo" onclick="app.todosController.removeTodo('${this.id}')"></button>
